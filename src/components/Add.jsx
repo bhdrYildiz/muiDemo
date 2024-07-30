@@ -40,7 +40,7 @@ const Add = () => {
     <>
       <Tooltip
         onClick={(e) => setOpen(true)}
-        title="Delete"
+        title="Paylaş"
         sx={{
           position: "fixed",
           bottom: 20,
@@ -66,7 +66,7 @@ const Add = () => {
           borderRadius={5}
         >
           <Typography variant="h6" color="gray" textAlign="center">
-            Create post
+            Paylaş
           </Typography>
           <UserBox>
             <Avatar
@@ -74,7 +74,7 @@ const Add = () => {
               sx={{ width: 30, height: 30 }}
             />
             <Typography fontWeight={500} variant="span">
-              John Doe
+              Bahadır Yıldız
             </Typography>
           </UserBox>
           <TextField
@@ -82,10 +82,10 @@ const Add = () => {
             id="standard-multiline-static"
             multiline
             rows={3}
-            placeholder="What's on your mind?"
+            placeholder="Ne düşünüyosun..."
             variant="standard"
           />
-          <Stack direction="row" gap={1} mt={2} mb={3}>
+          <Stack direction="row" gap={1} mt={2} mb={3} sx={{cursor:"pointer"}}>
             <EmojiEmotions color="primary" />
             <Image color="secondary" />
             <VideoCameraBack color="success" />
@@ -96,7 +96,7 @@ const Add = () => {
             variant="contained"
             aria-label="outlined primary button group"
           >
-            <Button>Post</Button>
+            <Button>Paylaş</Button>
             <Button sx={{ width: "100px" }}>
               <DateRange />
             </Button>

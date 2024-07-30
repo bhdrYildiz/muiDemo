@@ -1,4 +1,4 @@
-import { Mail, Notifications, Pets } from "@mui/icons-material";
+import { Mail, Notifications } from "@mui/icons-material";
 import {
   AppBar,
   Avatar,
@@ -11,11 +11,13 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
 import React, { useState } from "react";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
+  backgroundColor: "#d1e0e8",
 });
 
 const Search = styled("div")(({ theme }) => ({
@@ -47,22 +49,31 @@ const Navbar = () => {
   return (
     <AppBar position="sticky">
       <StyledToolbar>
-        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          LAMA DEV
+        <Typography
+          component="a"
+          href="/"
+          variant="h6"
+          sx={{
+            display: { xs: "none", sm: "block" },
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          YILDIZ
         </Typography>
-        <Pets sx={{ display: { xs: "block", sm: "none" } }} />
+        <StarIcon sx={{ display: { xs: "block", sm: "none" } }} />
         <Search>
-          <InputBase placeholder="search..." />
+          <InputBase placeholder="Search..." />
         </Search>
         <Icons>
           <Badge badgeContent={4} color="error">
-            <Mail />
+            <Mail sx={{ cursor: "pointer" }} />
           </Badge>
           <Badge badgeContent={2} color="error">
-            <Notifications />
+            <Notifications sx={{ cursor: "pointer" }} />
           </Badge>
           <Avatar
-            sx={{ width: 30, height: 30 }}
+            sx={{ width: 30, height: 30, cursor: "pointer" }}
             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             onClick={(e) => setOpen(true)}
           />
@@ -72,7 +83,7 @@ const Navbar = () => {
             sx={{ width: 30, height: 30 }}
             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           />
-          <Typography variant="span">John</Typography>
+          <Typography variant="span">Bahadır</Typography>
         </UserBox>
       </StyledToolbar>
       <Menu
