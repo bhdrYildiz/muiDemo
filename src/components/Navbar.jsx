@@ -1,3 +1,4 @@
+import { Mail, Notifications, Pets } from "@mui/icons-material";
 import {
   AppBar,
   Avatar,
@@ -11,10 +12,8 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import StarIcon from "@mui/icons-material/Star";
-import { Mail, Notifications } from "@mui/icons-material";
 
-const StyledToolBar = styled(Toolbar)({
+const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
 });
@@ -27,10 +26,9 @@ const Search = styled("div")(({ theme }) => ({
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
-  cursor: "pointer",
   display: "none",
-  gap: "20px",
   alignItems: "center",
+  gap: "20px",
   [theme.breakpoints.up("sm")]: {
     display: "flex",
   },
@@ -38,23 +36,21 @@ const Icons = styled(Box)(({ theme }) => ({
 
 const UserBox = styled(Box)(({ theme }) => ({
   display: "flex",
-  gap: "10px",
   alignItems: "center",
+  gap: "10px",
   [theme.breakpoints.up("sm")]: {
     display: "none",
   },
 }));
-
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
   return (
-    <AppBar position="stikcy">
-      <StyledToolBar>
+    <AppBar position="sticky">
+      <StyledToolbar>
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          YILDIZ
+          LAMA DEV
         </Typography>
-        <StarIcon sx={{ display: { xs: "block", sm: "none" } }} />
+        <Pets sx={{ display: { xs: "block", sm: "none" } }} />
         <Search>
           <InputBase placeholder="search..." />
         </Search>
@@ -66,9 +62,9 @@ const Navbar = () => {
             <Notifications />
           </Badge>
           <Avatar
-            onClick={(e) => setOpen(true)}
             sx={{ width: 30, height: 30 }}
             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            onClick={(e) => setOpen(true)}
           />
         </Icons>
         <UserBox onClick={(e) => setOpen(true)}>
@@ -76,9 +72,9 @@ const Navbar = () => {
             sx={{ width: 30, height: 30 }}
             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           />
-          <Typography variant="span">John Doe</Typography>
+          <Typography variant="span">John</Typography>
         </UserBox>
-      </StyledToolBar>
+      </StyledToolbar>
       <Menu
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"
@@ -90,7 +86,7 @@ const Navbar = () => {
         }}
         transformOrigin={{
           vertical: "top",
-          horizontal: "left",
+          horizontal: "right",
         }}
       >
         <MenuItem>Profile</MenuItem>
